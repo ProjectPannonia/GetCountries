@@ -1,7 +1,5 @@
 package com.company;
 
-
-import com.company.states.CountryCode;
 import com.company.states.CountryIso;
 
 import java.util.List;
