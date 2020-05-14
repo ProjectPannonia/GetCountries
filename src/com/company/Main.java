@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         GetAllCountries getAllCountries = new GetAllCountries();
-        
+
         List<CountryIso> allData = getAllCountries.getNameCodeAndIso();
 
         for (CountryIso c : allData){
