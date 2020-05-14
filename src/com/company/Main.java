@@ -2,6 +2,7 @@ package com.company;
 
 
 import com.company.states.CountryCode;
+import com.company.states.CountryIso;
 
 import java.util.List;
 
@@ -9,12 +10,13 @@ public class Main {
 
     public static void main(String[] args) {
         GetAllCountries getAllCountries = new GetAllCountries();
-        //List<Country> countriesNames = getAllCountries.getOnlyCountriesNames();
-        List<CountryCode> namesAndIso = getAllCountries.getCountriesNameAndIso();
+        
+        List<CountryIso> allData = getAllCountries.getNameCodeAndIso();
 
-        for (CountryCode cc : namesAndIso){
-            System.out.println(cc.getName() + " " + cc.getCode());
+        for (CountryIso c : allData){
+            System.out.println(c.getName() + ", " + c.getCode() + ", " + c.getIso());
         }
+
     }
 
 }
