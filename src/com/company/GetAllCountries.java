@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.states.Country;
+import com.company.states.CountryCode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,19 @@ public class GetAllCountries {
             }
         }
         return countries;
+    }
+    public List<CountryCode> getCountriesNameAndCode(){
+        List<CountryCode> countryCodes = new ArrayList<>();
+
+        for(String country : isoCountries){
+            Locale locale = new Locale("en",country);
+            String name = locale.getDisplayCountry();
+            String iso = locale.getISO3Country();
+            if (!countryCodes.contains(name)) {
+                countryCodes.add(new CountryCode(name,iso));
+            }
+        }
+        return countryCodes;
     }
 
 }

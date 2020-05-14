@@ -8,4 +8,8 @@ public class CountryIso extends CountryCode{
         super(name, code);
         this.iso = iso;
     }
+
+    public String getIso() {
+        return iso;
+    }
 }

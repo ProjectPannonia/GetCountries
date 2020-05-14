@@ -8,4 +8,8 @@ public class CountryCode extends Country {
         super(name);
         this.code = code;
     }
+
+    public String getCode() {
+        return code;
+    }
 }
