@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.states.Country;
 import com.company.states.CountryCode;
+import com.company.states.CountryIso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class GetAllCountries {
         }
         return countries;
     }
-    public List<CountryCode> getCountriesNameAndCode(){
+    public List<CountryCode> getCountriesNameAndIso(){
         List<CountryCode> countryCodes = new ArrayList<>();
 
         for(String country : isoCountries){
@@ -37,6 +38,20 @@ public class GetAllCountries {
             }
         }
         return countryCodes;
+    }
+    public List<CountryIso> getNameCodeAndIso(){
+        List<CountryIso> nameCodeIso = new ArrayList<>();
+        for(String country : isoCountries){
+            Locale locale = new Locale("en",country);
+            String name = locale.getDisplayCountry();
+            String iso = locale.getISO3Country();
+            String code = locale.getCountry();
+            if (!nameCodeIso.contains(name)) {
+                nameCodeIso.add(new CountryIso(name,iso,code));
+            }
+        }
+
+        return nameCodeIso;
     }
 
 }
